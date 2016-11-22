@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+
+.sapMObjLStatusDiv {
+    font-weight: 600;
+}
+
+.sapMObjLBottomRow :first-child .sapMObjLAttrDiv .sapMObjectAttributeDiv
+{
+	color:red;
+}

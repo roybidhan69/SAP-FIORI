@@ -1,0 +1,34 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="sap.ui.pro_order.view.Main" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Production Order Documents">
+		<content>
+			<SearchField width="90%" class="sapUiSmallMargin" search="searchItems" />
+	<List
+		items="{/ProductCollection}"
+		id="list">
+		<items>
+			<ObjectListItem
+				title="Document: {ProductId}"
+				type="Active"
+				press="onListItemPress"
+				number="{Quantity}"
+				numberUnit="{CurrencyCode}">
+				<firstStatus>
+					<ObjectStatus
+						text="{Status}"
+						state="{
+							path: 'Status',
+							formatter: 'sap.ui.pro_order.Formatter.Formatter.status'
+						}"/>
+				</firstStatus>
+				<attributes>
+					<ObjectAttribute text="16-OCT-2016" />
+					<ObjectAttribute text="{Name}" />
+				</attributes>
+			</ObjectListItem>
+		</items>
+	</List>
+		</content>
+	
+	</Page>
+</core:View>

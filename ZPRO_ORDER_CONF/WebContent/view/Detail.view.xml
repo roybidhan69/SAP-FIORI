@@ -1,0 +1,84 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+		controllerName="sap.ui.pro_order.view.Detail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Production Order Details">
+		<content>
+	<ObjectHeader
+		title="{ProductId}"
+		backgroundDesign="Translucent"
+		intro=""
+		number="Plant"
+		numberUnit="Electronics" >
+		<statuses>
+			<ObjectStatus  title="Workcenter" text="Bangalore"/>
+			<ObjectStatus  title="Shift" text="Night"/>
+			<ObjectStatus  title="Storage Location" text="Kormangala"/>
+		</statuses>
+		<attributes>
+			<ObjectAttribute text="{Description}" />
+			<ObjectAttribute
+				text="{Category}"
+				active="true"
+				press="handleLinkObjectAttributePress" />
+		</attributes>
+	</ObjectHeader>
+		
+		<VBox class="sapUiSmallMargin">
+		<f:Form id="FormChange354"
+			minWidth="1024"
+			maxContainerCols="2"
+			editable="true">
+			<f:title>
+				<core:Title text="Quantity" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanL="4"
+					labelSpanM="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					columnsL="1"
+					columnsM="1" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Planned Quantity">
+							<f:fields>
+								<Input value="{Quantity}" id="name" enabled="false" type="Number"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Actual Quantity">
+							<f:fields>
+								<Input value="" type="number"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+	  <Table 
+	  	   		 id="materialTable" 
+				 class="grdTbl">
+	     		 <headerToolbar>
+	      				<Toolbar  class="hdTool">
+	     					   <!-- <Label text="Item Data" class="table_toolbar" level="H2"/>
+	     					   <Button type="Accept" icon="sap-icon://add" class="btnAdd" press="addItem"></Button> -->
+	     				</Toolbar>
+	   			 </headerToolbar>				 
+			</Table>
+	
+		</content>
+				<footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer/>
+               <Button type="Emphasized" text="" icon="sap-icon://add" press="addRow">
+                    <layoutData><OverflowToolbarLayoutData moveToOverflow="false" /></layoutData>
+                </Button>
+                <Button type="Accept" text="Submit">
+                    <layoutData><OverflowToolbarLayoutData moveToOverflow="false" /></layoutData>
+                </Button>
+            </OverflowToolbar>
+		</footer>
+	</Page>
+</core:View>
